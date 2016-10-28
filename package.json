@@ -1,0 +1,55 @@
+{
+  "name": "react-mdl-select",
+  "version": "0.9.0",
+  "description": "A simple autocomplete select field for react-mdl",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "jsnext:main": "es/index.js",
+  "scripts": {
+    "lint": "eslint ./src",
+    "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --out-dir lib && cp src/SelectField/react-mdl-select.css lib/SelectField/react-mdl-select.css",
+    "build:es": "cross-env BABEL_ENV=es babel src --out-dir es && cp src/SelectField/react-mdl-select.css es/SelectField/react-mdl-select.css",
+    "build:umd": "cross-env BABEL_ENV=commonjs NODE_ENV=development webpack --progress --verbose --colors",
+    "build:umd:min": "cross-env BABEL_ENV=commonjs NODE_ENV=production webpack --progress --verbose --colors",
+    "build": "npm run build:commonjs && npm run build:es && npm run build:umd && npm run build:umd:min"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/INersterov/react-mdl-select.git"
+  },
+  "author": "Ilya Nesterov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/INersterov/react-mdl-select/issues"
+  },
+  "homepage": "https://github.com/INersterov/react-mdl-select#readme",
+  "dependencies": {
+    "lodash": "^4.16.4",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-mdl": "^1.7.2"
+  },
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-cli": "^6.18.0",
+    "babel-loader": "^6.2.5",
+    "babel-plugin-transform-regenerator": "^6.16.1",
+    "babel-polyfill": "^6.16.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-react-hmre": "^1.1.1",
+    "babel-preset-stage-0": "^6.16.0",
+    "cross-env": "^3.1.3",
+    "css-loader": "^0.25.0",
+    "eslint": "^3.8.1",
+    "eslint-config-airbnb": "^12.0.0",
+    "eslint-plugin-import": "^2.0.1",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.4.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.13.2"
+  }
+}
